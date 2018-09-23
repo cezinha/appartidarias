@@ -188,7 +188,7 @@ select:focus {
 .ranking .bullet {
 	background: left center url('../img/icon_arrow.png') no-repeat;
 	background-size: 50px;
-	margin: 40px 0;
+	margin: 40px 0 20px;
 	padding: 5px 0 5px 60px;
 }
 .ranking .icon {
@@ -221,6 +221,14 @@ select:focus {
   font-size: .75rem;
   background-color: transparent;
   border-radius: .25rem;
+}
+.ranking .label-progress {
+	margin-left: 2px;
+	position: absolute;
+	font-size: 0.7em;
+	top: 3px;
+	text-align: center;
+	color: #470c6e;
 }
 .ranking .arrow-progress .arrow-bar {
   display: -webkit-box;

@@ -269,6 +269,8 @@ $.getJSON("/api/parties/", function (response) {
 // load view
 function getPartyDetails(partyInfo) {
     var partyImg = this.processImgName(partyInfo.initials);
+    var lblLeftWomen = (partyInfo.women_pct > 0) ? 'left:'+Math.round(100*partyInfo.women_pct)+'%' : '';
+    var lblLeftMoney = (partyInfo.money_women_pct > 0) ? 'left:'+Math.round(100*partyInfo.money_women_pct)+'%' : '';
     
     return '<div class="item-party">' +
             '<div class="row mb-4 justify-content-center">' +
@@ -284,6 +286,7 @@ function getPartyDetails(partyInfo) {
                 '<img src="/static/img/icon_person.png" class="img-fluid" alt="Person" />' +
               '</div>'+
               '<div class="col-11">'+
+                '<div class="label-progress" style="'+lblLeftWomen+'">'+Math.round(100*partyInfo.women_pct)+'%</div>'+
                 '<div class="arrow-progress">'+
                   '<div class="arrow-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>' +
                 '</div>' +
@@ -300,6 +303,7 @@ function getPartyDetails(partyInfo) {
                 '<img src="/static/img/icon_money.png" class="img-fluid" alt="Money" />' +
               '</div>' +
               '<div class="col-11">' +
+                '<div class="label-progress" style="'+lblLeftMoney+'">'+Math.round(100*partyInfo.money_women_pct)+'%</div>'+
                 '<div class="arrow-progress">' +
                   '<div class="arrow-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>' +
                 '</div>' +
